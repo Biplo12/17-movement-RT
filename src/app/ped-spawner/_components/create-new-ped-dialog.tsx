@@ -103,7 +103,7 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
 
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild className="w-full absolute bottom-0 left-0">
         <PrimaryButton>
           <img src="/icons/plus-icon.svg" alt="Plus icon" />
           <span className="text-center w-full">Create new one</span>

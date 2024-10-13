@@ -23,11 +23,13 @@ export default function PropTool() {
       <div className="flex flex-col items-start justify-between w-full h-[calc(100%-140px)]">
         <div className="flex-grow flex flex-col items-start justify-start w-full">
           <CardFunctionHeader title="Prop tool" icon="prop-icon" />
-          <div className="flex flex-col w-full h-full">
-            <CardFunctionPropModel />
-            <CardFunctionTargetEntity />
-            <CardFunctionAnimation />
-            <CardFunctionBones />
+          <div className="flex flex-col w-full h-full items-start justify-start gap-1">
+            <div className="flex flex-col w-full">
+              <CardFunctionPropModel />
+              <CardFunctionTargetEntity />
+              <CardFunctionAnimation />
+              <CardFunctionBones />
+            </div>
             <div className="w-full flex items-start justify-end">
               <PrimaryButton onClick={handleCopyNative}>
                 <span className="text-center w-full">Copy native</span>
