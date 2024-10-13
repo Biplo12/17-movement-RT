@@ -21,7 +21,7 @@ const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
   return (
     <div
       key={item.id}
-      className="w-full bg-[#0D0E12] p-4 flex items-center justify-between"
+      className="w-full bg-[#0D0E12] p-4 px-8 flex items-center justify-between"
     >
       <span>{item.title}</span>
       <div className="flex items-center justify-end gap-2">

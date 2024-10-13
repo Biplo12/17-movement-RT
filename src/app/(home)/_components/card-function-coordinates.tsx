@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { generateRandomCoordinates } from "@/lib/utils";
 import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import CopyButton from "@/components/common/copy-button";
+import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
+import { setCoordinates } from "@/state/globalsSlice";
 
 const CardFunctionCoordinates: React.FC = (): JSX.Element => {
-  const [coordinates, setCoordinates] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const coordinates = useAppSelector((state) => state.global.coordinates);
 
   useEffect(() => {
-    setCoordinates(generateRandomCoordinates());
+    dispatch(setCoordinates(generateRandomCoordinates()));
   }, []);
 
   return (

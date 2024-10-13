@@ -6,6 +6,7 @@ import IGlobalReducerInterface from "@/interfaces/IGlobalReducerInterface";
 const initialState: IGlobalReducerInterface = {
   coordinates: "",
   heading: 0,
+  weather: null,
   presets: [
     {
       id: "1",

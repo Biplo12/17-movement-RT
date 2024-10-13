@@ -1,4 +1,4 @@
-import { weatherOptions } from "@/constants";
+import { WeatherEnum } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -27,5 +27,11 @@ export const generateRandomTime = () => {
 };
 
 export const generateRandomWeather = () => {
-  return weatherOptions[Math.floor(Math.random() * weatherOptions.length)];
+  const weatherKeys = Object.keys(WeatherEnum) as Array<
+    keyof typeof WeatherEnum
+  >;
+
+  return WeatherEnum[
+    weatherKeys[Math.floor(Math.random() * weatherKeys.length)]
+  ];
 };

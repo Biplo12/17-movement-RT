@@ -1,13 +1,16 @@
 import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
-import React, { useEffect, useState } from "react";
-import { generateRandomHeading } from "@/lib/utils";
+import React, { useEffect } from "react";
 import CopyButton from "@/components/common/copy-button";
+import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
+import { setHeading } from "@/state/globalsSlice";
+import { generateRandomHeading } from "@/lib/utils";
 
 const CardFunctionHeading: React.FC = (): JSX.Element => {
-  const [heading, setHeading] = useState<string | null>(null);
+  const heading = useAppSelector((state) => state.global.heading);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setHeading(generateRandomHeading());
+    dispatch(setHeading(Number(generateRandomHeading())));
   }, []);
 
   return (
@@ -16,7 +19,7 @@ const CardFunctionHeading: React.FC = (): JSX.Element => {
         <span className="text-sm">
           {heading ? heading : "Generating heading..."}
         </span>
-        <CopyButton content={heading || ""} />
+        <CopyButton content={heading.toString()} />
       </div>
     </CardFunctionLabeledItem>
   );
