@@ -1,5 +1,4 @@
 import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
-import CopyButton from "@/components/common/copy-button";
 import React from "react";
 
 interface CardFunctionModelIdProps {
