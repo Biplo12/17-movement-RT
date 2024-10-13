@@ -33,7 +33,7 @@ export default function RootLayout({
         >
           <div
             className="flex flex-col items-start justify-center h-screen bg-cover bg-center p-8"
-            style={{ backgroundImage: "url('/images/bg.png')" }}
+            style={{ backgroundImage: "url('/images/BG.png')" }}
           >
             <Toaster />
             {children}
