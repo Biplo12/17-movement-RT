@@ -62,17 +62,15 @@ const PanelCardNavbar: React.FC = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center justify-between p-px bg-gradient-to-r from-[#FF1A35] to-[#A01F2E]">
-      <nav className="flex items-start justify-start gap-4 p-4 bg-[#090A0E] w-full">
-        {navbarItems.map((item) => (
-          <NavbarItem
-            key={item.href}
-            {...item}
-            isActive={pathname === item.href}
-          />
-        ))}
-      </nav>
-    </div>
+    <nav className="flex items-start justify-start gap-4 p-4 bg-[#090A0E] w-full">
+      {navbarItems.map((item) => (
+        <NavbarItem
+          key={item.href}
+          {...item}
+          isActive={pathname === item.href}
+        />
+      ))}
+    </nav>
   );
 };
 

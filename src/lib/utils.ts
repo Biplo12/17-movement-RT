@@ -35,3 +35,13 @@ export const generateRandomWeather = () => {
     weatherKeys[Math.floor(Math.random() * weatherKeys.length)]
   ];
 };
+
+export const generateRandomInteriorId = () => {
+  const interiorIdString = Math.random().toString(36).substring(2, 15);
+  return `v_${interiorIdString}`;
+};
+
+export const generateRandomRoomId = () => {
+  const roomIdString = Math.random().toString(36).substring(2, 15);
+  return `r_${roomIdString}`;
+};

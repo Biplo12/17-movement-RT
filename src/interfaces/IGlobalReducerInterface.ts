@@ -6,4 +6,6 @@ export default interface IGlobalReducerInterface {
   heading: number;
   weather: WeatherEnum | null;
   presets: Preset[];
+  interiorId: string | null;
+  roomId: string | null;
 }

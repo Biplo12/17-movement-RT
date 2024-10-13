@@ -14,6 +14,8 @@ const initialState: IGlobalReducerInterface = {
       objects: [{ id: "1", title: "Object 1" }],
     },
   ],
+  interiorId: null,
+  roomId: null,
 };
 
 export const globalSlice = createSlice({
@@ -59,6 +61,12 @@ export const globalSlice = createSlice({
         preset.objects = preset.objects.filter((o) => o.id !== objectId);
       }
     },
+    setInteriorId: (state, action: PayloadAction<string>) => {
+      state.interiorId = action.payload;
+    },
+    setRoomId: (state, action: PayloadAction<string>) => {
+      state.roomId = action.payload;
+    },
   },
 });
 
@@ -71,5 +79,7 @@ export const {
   deletePreset,
   addObjectToPreset,
   deleteObjectFromPreset,
+  setInteriorId,
+  setRoomId,
 } = globalSlice.actions;
 export default globalSlice.reducer;
