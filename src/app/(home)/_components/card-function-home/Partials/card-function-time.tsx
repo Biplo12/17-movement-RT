@@ -30,9 +30,9 @@ const CardFunctionTime: React.FC = (): JSX.Element => {
   };
 
   return (
-    <CardFunctionLabeledItem label="Set Time">
+    <CardFunctionLabeledItem label="Set Time" isItemIndexOdd={true}>
       <div className="flex items-end justify-end gap-4 w-full">
-        <div className="flex flex-row items-center justify-center gap-4">
+        <div className="flex flex-row items-end justify-end gap-4 w-full">
           <SquareTimeInput
             value={time.hours}
             type="hours"

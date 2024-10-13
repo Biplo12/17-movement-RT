@@ -1,3 +1,4 @@
+import { weatherOptions } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -23,4 +24,8 @@ export const generateRandomTime = () => {
   const seconds = Math.floor(Math.random() * 60);
 
   return { hours, minutes, seconds };
+};
+
+export const generateRandomWeather = () => {
+  return weatherOptions[Math.floor(Math.random() * weatherOptions.length)];
 };
