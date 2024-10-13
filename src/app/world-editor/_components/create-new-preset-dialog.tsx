@@ -6,30 +6,25 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Preset } from "@/interfaces";
 import PrimaryButton from "@/components/common/primary-button";
 import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
+import { useAppDispatch } from "@/store/store-hooks";
+import { addPreset } from "@/state/globalsSlice";
 
-interface CreateNewPresetDialogProps {
-  presets: Preset[];
-  setPresets: (presets: Preset[]) => void;
-}
-
-const CreateNewPresetDialog: React.FC<CreateNewPresetDialogProps> = ({
-  presets,
-  setPresets,
-}): JSX.Element => {
+const CreateNewPresetDialog: React.FC = (): JSX.Element => {
   const [title, setTitle] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
+  const dispatch = useAppDispatch();
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
   const handleCreateNewPreset = () => {
     const newId = uuidv4();
-    setPresets([...presets, { id: newId, title }]);
+    dispatch(addPreset({ id: newId, title, objects: [] }));
+
     toast.success("Preset created successfully");
     setDialogOpen(false);
   };

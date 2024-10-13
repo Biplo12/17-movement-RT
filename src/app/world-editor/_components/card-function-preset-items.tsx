@@ -1,27 +1,15 @@
 import React from "react";
 import CardFunctionPresetItem from "./card-function-preset-item";
-import { Preset } from "@/interfaces";
+import { useAppSelector } from "@/store/store-hooks";
 
-interface CardFunctionPresetItemsProps {
-  presets: Preset[];
-  setPresets: (presets: Preset[]) => void;
-}
-
-const CardFunctionPresetItems: React.FC<CardFunctionPresetItemsProps> = ({
-  presets,
-  setPresets,
-}): JSX.Element | null => {
+const CardFunctionPresetItems: React.FC = (): JSX.Element | null => {
+  const presets = useAppSelector((state) => state.global.presets);
   if (!presets) return null;
 
   return (
     <div className="flex items-start justify-start w-full flex-col gap-4">
-      {presets?.map((item) => (
-        <CardFunctionPresetItem
-          key={item.id}
-          item={item}
-          presets={presets}
-          setPresets={setPresets}
-        />
+      {presets?.map((preset) => (
+        <CardFunctionPresetItem key={preset.id} item={preset} />
       ))}
     </div>
   );

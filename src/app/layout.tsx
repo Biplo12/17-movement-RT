@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "sonner";
+import ReduxProvider from "@/providers/redux-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,17 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div
-          className="flex flex-col items-start justify-center h-screen bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/images/bg.png')" }}
+      <ReduxProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Toaster />
-          {children}
-        </div>
-      </body>
+          <div
+            className="flex flex-col items-start justify-center h-screen bg-cover bg-center p-8"
+            style={{ backgroundImage: "url('/images/bg.png')" }}
+          >
+            <Toaster />
+            {children}
+          </div>
+        </body>
+      </ReduxProvider>
     </html>
   );
 }

@@ -1,19 +1,19 @@
+"use client";
+
 import { Preset } from "@/interfaces";
 import React from "react";
 import CardFunctionPresetAction from "./card-function-preset-action";
 import CardFunctionPresetDeleteAlert from "./card-function-preset-delete-alert";
+import { useRouter } from "next/navigation";
 
 interface CardFunctionPresetItemProps {
   item: Preset;
-  presets: Preset[];
-  setPresets: (presets: Preset[]) => void;
 }
 
 const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
   item,
-  presets,
-  setPresets,
 }): JSX.Element => {
+  const router = useRouter();
   return (
     <div
       key={item.id}
@@ -29,13 +29,11 @@ const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
         <CardFunctionPresetAction
           icon="edit-icon"
           label="Edit"
-          onClick={() => {}}
+          onClick={() => {
+            router.push(`/world-editor/${item.id}`);
+          }}
         />
-        <CardFunctionPresetDeleteAlert
-          item={item}
-          presets={presets}
-          setPresets={setPresets}
-        />
+        <CardFunctionPresetDeleteAlert item={item} />
       </div>
     </div>
   );

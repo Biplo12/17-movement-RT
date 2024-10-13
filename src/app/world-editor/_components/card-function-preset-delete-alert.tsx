@@ -13,19 +13,20 @@ import {
 import { Preset } from "@/interfaces";
 import { toast } from "sonner";
 import CardFunctionPresetAction from "./card-function-preset-action";
+import { useAppDispatch } from "@/store/store-hooks";
+import { deletePreset } from "@/state/globalsSlice";
 
 interface CardFunctionPresetDeleteAlertProps {
   item: Preset;
-  presets: Preset[];
-  setPresets: (presets: Preset[]) => void;
 }
 
 const CardFunctionPresetDeleteAlert: React.FC<
   CardFunctionPresetDeleteAlertProps
-> = ({ item, presets, setPresets }): JSX.Element => {
+> = ({ item }): JSX.Element => {
+  const dispatch = useAppDispatch();
+
   const handleDelete = () => {
-    console.log(item.id);
-    setPresets(presets.filter((preset) => preset.id !== item.id));
+    dispatch(deletePreset(item.id));
     toast.success(`Preset ${item.title} deleted`);
   };
 
