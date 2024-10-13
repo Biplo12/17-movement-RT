@@ -11,3 +11,16 @@ export const generateRandomCoordinates = () => {
   const z = (Math.random() * 2000 - 1000).toFixed(3);
   return `X: ${x} Y: ${y}, Z: ${z}`;
 };
+
+export const generateRandomHeading = () => {
+  const heading = (Math.random() * 360).toFixed(3);
+  return heading;
+};
+
+export const generateRandomTime = () => {
+  const hours = Math.floor(Math.random() * 24);
+  const minutes = Math.floor(Math.random() * 60);
+  const seconds = Math.floor(Math.random() * 60);
+
+  return { hours, minutes, seconds };
+};

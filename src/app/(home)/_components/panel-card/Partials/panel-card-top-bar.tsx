@@ -41,7 +41,7 @@ const PanelCardTopBar: React.FC = () => (
     <div className="flex items-center justify-between p-px bg-gradient-to-r from-[#FF1A35] to-[#A01F2E]">
       <div className="flex items-center justify-start p-1.5 pr-3.5 w-full bg-[#090A0E]">
         <Logo withShadow={true} />
-        <div className="flex flex-col justify-start items-start w-full h-full">
+        <div className="flex flex-col justify-center items-start w-full h-full">
           <h1 className="font-bold text-sm leading-none">17 MOVEMENT</h1>
           <p className="text-[#696264] text-xs leading-none">
             Development tool

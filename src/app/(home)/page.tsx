@@ -1,4 +1,6 @@
-import CardFunctionLocation from "./_components/card-function-location";
+"use client";
+
+import CardFunctionLocation from "./_components/card-function-home";
 import PanelCard from "./_components/panel-card";
 
 export default function Home() {
