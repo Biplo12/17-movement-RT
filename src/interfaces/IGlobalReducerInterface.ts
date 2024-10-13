@@ -8,4 +8,6 @@ export default interface IGlobalReducerInterface {
   presets: Preset[];
   interiorId: string | null;
   roomId: string | null;
+  propModel: string | null;
+  targetEntity: string | null;
 }

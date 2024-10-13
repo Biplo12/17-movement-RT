@@ -16,6 +16,8 @@ const initialState: IGlobalReducerInterface = {
   ],
   interiorId: null,
   roomId: null,
+  propModel: null,
+  targetEntity: null,
 };
 
 export const globalSlice = createSlice({
@@ -67,6 +69,12 @@ export const globalSlice = createSlice({
     setRoomId: (state, action: PayloadAction<string>) => {
       state.roomId = action.payload;
     },
+    setPropModel: (state, action: PayloadAction<string>) => {
+      state.propModel = action.payload;
+    },
+    setTargetEntity: (state, action: PayloadAction<string>) => {
+      state.targetEntity = action.payload;
+    },
   },
 });
 
@@ -81,5 +89,7 @@ export const {
   deleteObjectFromPreset,
   setInteriorId,
   setRoomId,
+  setPropModel,
+  setTargetEntity,
 } = globalSlice.actions;
 export default globalSlice.reducer;

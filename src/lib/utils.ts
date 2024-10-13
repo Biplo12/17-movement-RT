@@ -45,3 +45,8 @@ export const generateRandomRoomId = () => {
   const roomIdString = Math.random().toString(36).substring(2, 15);
   return `r_${roomIdString}`;
 };
+
+export const generateRandomPropModel = () => {
+  const propModelString = Math.random().toString(36).substring(2, 15);
+  return `vw_${propModelString}`;
+};
