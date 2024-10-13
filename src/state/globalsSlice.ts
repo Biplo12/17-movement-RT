@@ -11,7 +11,8 @@ const initialState: IGlobalReducerInterface = {
     {
       id: "1",
       title: "Preset 1",
-      objects: [{ id: "1", title: "Object 1" }],
+      objects: [{ id: "1", title: "Object 1", isVisible: true }],
+      isVisible: true,
     },
   ],
   interiorId: null,
@@ -55,6 +56,17 @@ export const globalSlice = createSlice({
         (preset) => preset.id !== action.payload
       );
     },
+    setPresetVisibility: (
+      state,
+      action: PayloadAction<{ presetId: string; isVisible: boolean }>
+    ) => {
+      const { presetId, isVisible } = action.payload;
+      const preset = state.presets.find((p) => p.id === presetId);
+
+      if (preset) {
+        preset.isVisible = isVisible;
+      }
+    },
     addObjectToPreset: (
       state,
       action: PayloadAction<{ presetId: string; object: ObjectType }>
@@ -75,6 +87,22 @@ export const globalSlice = createSlice({
 
       if (preset) {
         preset.objects = preset.objects.filter((o) => o.id !== objectId);
+      }
+    },
+    setObjectVisibility: (
+      state,
+      action: PayloadAction<{
+        presetId: string;
+        objectId: string;
+        isVisible: boolean;
+      }>
+    ) => {
+      const { presetId, objectId, isVisible } = action.payload;
+      const preset = state.presets.find((p) => p.id === presetId);
+      const object = preset?.objects.find((o) => o.id === objectId);
+
+      if (object) {
+        object.isVisible = isVisible;
       }
     },
     setInteriorId: (state, action: PayloadAction<string>) => {
@@ -123,5 +151,7 @@ export const {
   setPedItems,
   addPedItem,
   deletePedItem,
+  setPresetVisibility,
+  setObjectVisibility,
 } = globalSlice.actions;
 export default globalSlice.reducer;

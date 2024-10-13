@@ -23,7 +23,7 @@ const CreateNewPresetDialog: React.FC = (): JSX.Element => {
 
   const handleCreateNewPreset = () => {
     const newId = uuidv4();
-    dispatch(addPreset({ id: newId, title, objects: [] }));
+    dispatch(addPreset({ id: newId, title, objects: [], isVisible: true }));
 
     toast.success("Preset created successfully");
     setDialogOpen(false);

@@ -1,12 +1,14 @@
 export interface ObjectType {
   id: string;
   title: string;
+  isVisible: boolean;
 }
 
 export interface Preset {
   id: string;
   title: string;
   objects: ObjectType[];
+  isVisible: boolean;
 }
 
 export interface PedItem {

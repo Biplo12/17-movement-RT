@@ -20,7 +20,7 @@ const CardFunctionAddingModel: React.FC<CardFunctionAddingModelProps> = ({
     dispatch(
       addObjectToPreset({
         presetId,
-        object: { id: objectId, title: objectName },
+        object: { id: objectId, title: objectName, isVisible: true },
       })
     );
 
