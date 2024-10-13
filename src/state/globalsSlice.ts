@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
-import { Preset, ObjectType } from "@/interfaces";
+import { Preset, ObjectType, PedItem } from "@/interfaces";
 import IGlobalReducerInterface from "@/interfaces/IGlobalReducerInterface";
 
 const initialState: IGlobalReducerInterface = {
@@ -19,6 +19,19 @@ const initialState: IGlobalReducerInterface = {
   propModel: null,
   targetEntity: null,
   bones: null,
+  pedItems: [
+    {
+      id: "1",
+      title: "Ped 1",
+      modelId: "model1",
+      coordinates: "X: -803.717 Y: 176.49, Z: 72.841",
+      rotation: {
+        X: 30,
+        Y: 30,
+        Z: 30,
+      },
+    },
+  ],
 };
 
 export const globalSlice = createSlice({
@@ -79,6 +92,17 @@ export const globalSlice = createSlice({
     setBones: (state, action: PayloadAction<string>) => {
       state.bones = action.payload;
     },
+    setPedItems: (state, action: PayloadAction<PedItem[]>) => {
+      state.pedItems = action.payload;
+    },
+    addPedItem: (state, action: PayloadAction<PedItem>) => {
+      state.pedItems.push(action.payload);
+    },
+    deletePedItem: (state, action: PayloadAction<string>) => {
+      state.pedItems = state.pedItems.filter(
+        (ped) => ped.id !== action.payload
+      );
+    },
   },
 });
 
@@ -96,5 +120,8 @@ export const {
   setPropModel,
   setTargetEntity,
   setBones,
+  setPedItems,
+  addPedItem,
+  deletePedItem,
 } = globalSlice.actions;
 export default globalSlice.reducer;

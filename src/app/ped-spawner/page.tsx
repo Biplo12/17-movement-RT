@@ -1,0 +1,25 @@
+"use client";
+
+import CardFunctionHeader from "@/components/card-function-header";
+import PanelCard from "@/components/panel-card";
+import CardFunctionPedItems from "./_components/card-function-ped-items";
+import CreateNewPedDialog from "./_components/create-new-ped-dialog";
+
+export default function PedSpawner() {
+  return (
+    <PanelCard>
+      <div className="flex flex-col items-start justify-between w-full h-[calc(100%-140px)]">
+        <div className="flex-grow flex flex-col items-start justify-start w-full">
+          <CardFunctionHeader
+            title="Ped spawner"
+            icon="ped-spawner-icon-active"
+          />
+          <div className="flex flex-col items-start justify-start w-full">
+            <CardFunctionPedItems />
+          </div>
+        </div>
+        <CreateNewPedDialog />
+      </div>
+    </PanelCard>
+  );
+}

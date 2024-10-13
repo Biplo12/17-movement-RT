@@ -8,3 +8,15 @@ export interface Preset {
   title: string;
   objects: ObjectType[];
 }
+
+export interface PedItem {
+  id: string;
+  title: string;
+  modelId: string;
+  coordinates: string;
+  rotation: {
+    X: number;
+    Y: number;
+    Z: number;
+  };
+}

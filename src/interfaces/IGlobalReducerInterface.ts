@@ -1,5 +1,5 @@
 import { WeatherEnum } from "@/constants";
-import { Preset } from ".";
+import { PedItem, Preset } from ".";
 
 export default interface IGlobalReducerInterface {
   coordinates: string;
@@ -11,4 +11,5 @@ export default interface IGlobalReducerInterface {
   propModel: string | null;
   targetEntity: string | null;
   bones: string | null;
+  pedItems: PedItem[];
 }
