@@ -77,9 +77,21 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
         title: pedItem.title,
         coordinates: pedItem.coordinates,
         modelId: pedItem.modelId,
-        rotation: pedItem.rotation,
+        rotation: {
+          X: pedItem.rotation.X,
+          Y: pedItem.rotation.Y,
+          Z: pedItem.rotation.Z,
+        },
       })
     );
+
+    setPedItem({
+      id: "",
+      title: "",
+      coordinates: "",
+      modelId: "",
+      rotation: { X: null, Y: null, Z: null },
+    });
 
     toast.success("Ped created successfully");
     setDialogOpen(false);

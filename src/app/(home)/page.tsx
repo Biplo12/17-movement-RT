@@ -12,7 +12,7 @@ import CardFunctionFreezeWeather from "./_components/card-function-freeze-weathe
 export default function Home() {
   return (
     <PanelCard>
-      <div className="flex flex-col items-start justify-start w-full h-full">
+      <div className="flex flex-col items-start justify-start w-full">
         <div className="flex flex-col items-start justify-start w-full">
           <CardFunctionHeader
             title="Current coordinates"
