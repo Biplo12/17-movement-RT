@@ -2,7 +2,7 @@
 
 import { Preset } from "@/interfaces";
 import React from "react";
-import CardFunctionPresetAction from "./card-function-preset-action";
+import CardFunctionActionButton from "../../../components/common/card-function-action-button";
 import CardFunctionPresetDeleteAlert from "./card-function-preset-delete-alert";
 import { useRouter } from "next/navigation";
 
@@ -14,6 +14,10 @@ const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
   item,
 }): JSX.Element => {
   const router = useRouter();
+
+  const handleEdit = () => {
+    router.push(`/world-editor/${item.id}`);
+  };
   return (
     <div
       key={item.id}
@@ -21,17 +25,15 @@ const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
     >
       <span>{item.title}</span>
       <div className="flex items-center justify-end gap-2">
-        <CardFunctionPresetAction
+        <CardFunctionActionButton
           icon="eye-icon"
           label="View"
           onClick={() => {}}
         />
-        <CardFunctionPresetAction
+        <CardFunctionActionButton
           icon="edit-icon"
           label="Edit"
-          onClick={() => {
-            router.push(`/world-editor/${item.id}`);
-          }}
+          onClick={handleEdit}
         />
         <CardFunctionPresetDeleteAlert item={item} />
       </div>

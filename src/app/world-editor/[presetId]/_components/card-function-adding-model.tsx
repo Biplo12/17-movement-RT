@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { addObjectToPreset } from "@/state/globalsSlice";
 import { useAppDispatch } from "@/store/store-hooks";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "sonner";
 interface CardFunctionAddingModelProps {
   presetId: string;
 }
@@ -22,6 +23,9 @@ const CardFunctionAddingModel: React.FC<CardFunctionAddingModelProps> = ({
         object: { id: objectId, title: objectName },
       })
     );
+
+    setObjectName("");
+    toast.success("Object added successfully");
   };
 
   const handleChangeObjectName = (e: React.ChangeEvent<HTMLInputElement>) => {

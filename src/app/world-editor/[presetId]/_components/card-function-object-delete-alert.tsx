@@ -10,24 +10,24 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { Preset } from "@/interfaces";
 import { toast } from "sonner";
 import { useAppDispatch } from "@/store/store-hooks";
-import { deletePreset } from "@/state/globalsSlice";
+import { deleteObjectFromPreset } from "@/state/globalsSlice";
+import { ObjectType } from "@/interfaces";
 import CardFunctionActionButton from "@/components/common/card-function-action-button";
-
-interface CardFunctionPresetDeleteAlertProps {
-  item: Preset;
+interface CardFunctionObjectDeleteAlertProps {
+  object: ObjectType;
+  presetId: string;
 }
 
-const CardFunctionPresetDeleteAlert: React.FC<
-  CardFunctionPresetDeleteAlertProps
-> = ({ item }): JSX.Element => {
+const CardFunctionObjectDeleteAlert: React.FC<
+  CardFunctionObjectDeleteAlertProps
+> = ({ object, presetId }): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const handleDelete = () => {
-    dispatch(deletePreset(item.id));
-    toast.success(`Preset ${item.title} deleted`);
+    dispatch(deleteObjectFromPreset({ presetId, objectId: object.id }));
+    toast.success(`Object ${object.title} deleted`);
   };
 
   return (
@@ -55,4 +55,4 @@ const CardFunctionPresetDeleteAlert: React.FC<
     </AlertDialog>
   );
 };
-export default CardFunctionPresetDeleteAlert;
+export default CardFunctionObjectDeleteAlert;

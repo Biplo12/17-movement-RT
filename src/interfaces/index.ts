@@ -1,4 +1,4 @@
-export interface Object {
+export interface ObjectType {
   id: string;
   title: string;
 }
@@ -6,5 +6,5 @@ export interface Object {
 export interface Preset {
   id: string;
   title: string;
-  objects: Object[];
+  objects: ObjectType[];
 }

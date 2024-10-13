@@ -1,23 +1,26 @@
 import React from "react";
 
-interface CardFunctionPresetActionProps {
-  icon: string;
+interface CardFunctionActionButtonProps {
+  icon?: string;
   label: string;
   onClick?: () => void;
+  children?: React.ReactNode;
 }
 
-const CardFunctionPresetAction: React.FC<CardFunctionPresetActionProps> = ({
+const CardFunctionActionButton: React.FC<CardFunctionActionButtonProps> = ({
   icon,
   label,
   onClick,
+  children,
 }): JSX.Element => {
   return (
     <div
       className="flex items-center justify-end gap-2 p-3 bg-[#0F1014] border border-[#131418] rounded-md cursor-pointer max-w-fit hover:brightness-125 transition-all duration-300"
       onClick={onClick}
     >
-      <img src={`/icons/${icon}.svg`} alt={label} />
+      {icon && <img src={`/icons/${icon}.svg`} alt={label} />}
+      {children}
     </div>
   );
 };
-export default CardFunctionPresetAction;
+export default CardFunctionActionButton;

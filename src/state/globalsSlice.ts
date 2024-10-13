@@ -1,12 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
-import { Preset, Object } from "@/interfaces";
+import { Preset, ObjectType } from "@/interfaces";
 import IGlobalReducerInterface from "@/interfaces/IGlobalReducerInterface";
 
 const initialState: IGlobalReducerInterface = {
   coordinates: "",
   heading: 0,
-  presets: [],
+  presets: [
+    {
+      id: "1",
+      title: "Preset 1",
+      objects: [{ id: "1", title: "Object 1" }],
+    },
+  ],
 };
 
 export const globalSlice = createSlice({
@@ -32,13 +38,24 @@ export const globalSlice = createSlice({
     },
     addObjectToPreset: (
       state,
-      action: PayloadAction<{ presetId: string; object: Object }>
+      action: PayloadAction<{ presetId: string; object: ObjectType }>
     ) => {
       const { presetId, object } = action.payload;
       const preset = state.presets.find((p) => p.id === presetId);
 
       if (preset) {
         preset.objects.push(object);
+      }
+    },
+    deleteObjectFromPreset: (
+      state,
+      action: PayloadAction<{ presetId: string; objectId: string }>
+    ) => {
+      const { presetId, objectId } = action.payload;
+      const preset = state.presets.find((p) => p.id === presetId);
+
+      if (preset) {
+        preset.objects = preset.objects.filter((o) => o.id !== objectId);
       }
     },
   },
@@ -52,5 +69,6 @@ export const {
   addPreset,
   deletePreset,
   addObjectToPreset,
+  deleteObjectFromPreset,
 } = globalSlice.actions;
 export default globalSlice.reducer;
