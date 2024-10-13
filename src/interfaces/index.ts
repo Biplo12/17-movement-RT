@@ -15,8 +15,8 @@ export interface PedItem {
   modelId: string;
   coordinates: string;
   rotation: {
-    X: number;
-    Y: number;
-    Z: number;
+    X: number | null;
+    Y: number | null;
+    Z: number | null;
   };
 }

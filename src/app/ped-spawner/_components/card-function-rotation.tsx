@@ -4,9 +4,9 @@ import React from "react";
 
 interface CardFunctionRotationProps {
   rotation: {
-    X: number;
-    Y: number;
-    Z: number;
+    X: number | null;
+    Y: number | null;
+    Z: number | null;
   };
 }
 
@@ -19,12 +19,12 @@ const CardFunctionRotation: React.FC<CardFunctionRotationProps> = ({
         {Object.entries(rotation).map(([key, value]) => (
           <div
             key={key}
-            className="flex items-center justify-center gap-2 bg-[#111216] px-3 py-2 rounded-lg"
+            className="flex items-center justify-center gap-2 bg-[#111216] px-3 py-2 rounded-md"
           >
             <span className="text-sm">
               {key}: {value}°
             </span>
-            <CopyButton content={value.toString()} />
+            <CopyButton content={value?.toString() ?? ""} />
           </div>
         ))}
       </div>
