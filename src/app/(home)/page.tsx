@@ -1,17 +1,37 @@
 "use client";
 
-import CardFunctionLocation from "./_components/card-function-home";
-import PanelCard from "./_components/panel-card";
+import PanelCard from "../../components/panel-card";
+import CardFunctionHeader from "@/components/card-function-header";
+import CardFunctionCoordinates from "./_components/card-function-coordinates";
+import CardFunctionHeading from "./_components/card-function-heading";
+import CardFunctionTime from "./_components/card-function-time";
+import CardFunctionWeather from "./_components/card-function-weather";
+import CardFunctionFreezeTime from "./_components/card-function-freeze-time";
+import CardFunctionFreezeWeather from "./_components/card-function-freeze-weather";
 
 export default function Home() {
   return (
-    <div
-      className="flex flex-col items-start justify-center h-screen bg-cover bg-center p-8"
-      style={{ backgroundImage: "url('/images/bg.png')" }}
-    >
-      <PanelCard>
-        <CardFunctionLocation />
-      </PanelCard>
-    </div>
+    <PanelCard>
+      <div className="flex flex-col items-start justify-start w-full h-full">
+        <div className="flex flex-col items-start justify-start w-full">
+          <CardFunctionHeader
+            title="Current coordinates"
+            icon="location-icon"
+          />
+          <CardFunctionCoordinates />
+          <CardFunctionHeading />
+        </div>
+        <div className="flex flex-col items-start justify-start w-full">
+          <CardFunctionHeader
+            title="Time and weathers configuration"
+            icon="weather-icon"
+          />
+          <CardFunctionTime />
+          <CardFunctionWeather />
+          <CardFunctionFreezeTime />
+          <CardFunctionFreezeWeather />
+        </div>
+      </div>
+    </PanelCard>
   );
 }

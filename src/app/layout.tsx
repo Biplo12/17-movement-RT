@@ -29,8 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster />
-        {children}
+        <div
+          className="flex flex-col items-start justify-center h-screen bg-cover bg-center p-8"
+          style={{ backgroundImage: "url('/images/bg.png')" }}
+        >
+          <Toaster />
+          {children}
+        </div>
       </body>
     </html>
   );

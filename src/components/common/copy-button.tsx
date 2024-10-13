@@ -21,7 +21,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ content }): JSX.Element => {
   };
   return (
     <button
-      className="text-xs font-bold"
+      className="text-xs font-bold hover:brightness-125 transition-all duration-300"
       onClick={handleCopy}
       disabled={!content}
     >

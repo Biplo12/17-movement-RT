@@ -32,15 +32,31 @@ const CardFunctionWeather: React.FC = (): JSX.Element => {
     <CardFunctionLabeledItem label="Weather">
       <div className="flex items-end justify-end gap-4 w-full">
         <div className="border-2 border-[#101115] px-4 py-2 h-12 rounded flex items-center gap-4 w-full max-w-fit">
-          <button onClick={() => changeWeather("prev")}>
-            <img src="/icons/left-arrow-icon.svg" alt="left arrow" />
+          <button
+            onClick={() => changeWeather("prev")}
+            className="hover:brightness-125 transition-all duration-300"
+          >
+            <img
+              src="/icons/left-arrow-icon.svg"
+              alt="left arrow"
+              className="w-3 h-3"
+            />
           </button>
           <span>{weather}</span>
-          <button onClick={() => changeWeather("next")}>
-            <img src="/icons/right-arrow-icon.svg" alt="right arrow" />
+          <button
+            onClick={() => changeWeather("next")}
+            className="hover:brightness-125 transition-all duration-300"
+          >
+            <img
+              src="/icons/right-arrow-icon.svg"
+              alt="right arrow"
+              className="w-3 h-3"
+            />
           </button>
         </div>
-        <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        <div className="max-w-[135px]">
+          <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        </div>
       </div>
     </CardFunctionLabeledItem>
   );

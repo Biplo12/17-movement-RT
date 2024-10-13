@@ -49,7 +49,9 @@ const CardFunctionTime: React.FC = (): JSX.Element => {
             onChange={(value) => handleTimeChange(value ?? 0, "seconds")}
           />
         </div>
-        <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        <div className="max-w-[135px]">
+          <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        </div>
       </div>
     </CardFunctionLabeledItem>
   );

@@ -8,7 +8,7 @@ interface PanelCardProps {
 
 const PanelCard: React.FC<PanelCardProps> = ({ children }): JSX.Element => {
   return (
-    <div className="bg-[#090A0E] text-white w-[520px] h-[95vh]">
+    <div className="bg-[#090A0E] text-white w-[520px] h-[95%]">
       <PanelCardTopBar />
       <PanelCardNavbar />
       {children}
