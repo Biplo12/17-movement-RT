@@ -2,11 +2,11 @@ import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import { Switch } from "@/components/ui/switch";
 import React from "react";
 
-const CardFunctionFreezeTime: React.FC = (): JSX.Element => {
+const CardFunctionFreezeWeather: React.FC = (): JSX.Element => {
   return (
-    <CardFunctionLabeledItem label="Freeze Time" isItemIndexOdd={true}>
+    <CardFunctionLabeledItem label="Freeze weather status">
       <Switch />
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionFreezeTime;
+export default CardFunctionFreezeWeather;

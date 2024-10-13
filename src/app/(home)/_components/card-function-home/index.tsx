@@ -4,6 +4,8 @@ import CardFunctionCoordinates from "./Partials/card-function-coordinates";
 import CardFunctionHeading from "./Partials/card-function-heading";
 import CardFunctionTime from "./Partials/card-function-time";
 import CardFunctionWeather from "./Partials/card-function-weather";
+import CardFunctionFreezeTime from "./Partials/card-function-freeze-time";
+import CardFunctionFreezeWeather from "./Partials/card-function-freeze-weather";
 
 const CardFunctionLocation: React.FC = (): JSX.Element => {
   return (
@@ -20,6 +22,8 @@ const CardFunctionLocation: React.FC = (): JSX.Element => {
         />
         <CardFunctionTime />
         <CardFunctionWeather />
+        <CardFunctionFreezeTime />
+        <CardFunctionFreezeWeather />
       </div>
     </div>
   );
