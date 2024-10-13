@@ -10,4 +10,5 @@ export default interface IGlobalReducerInterface {
   roomId: string | null;
   propModel: string | null;
   targetEntity: string | null;
+  bones: string | null;
 }

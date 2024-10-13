@@ -18,6 +18,7 @@ const initialState: IGlobalReducerInterface = {
   roomId: null,
   propModel: null,
   targetEntity: null,
+  bones: null,
 };
 
 export const globalSlice = createSlice({
@@ -75,6 +76,9 @@ export const globalSlice = createSlice({
     setTargetEntity: (state, action: PayloadAction<string>) => {
       state.targetEntity = action.payload;
     },
+    setBones: (state, action: PayloadAction<string>) => {
+      state.bones = action.payload;
+    },
   },
 });
 
@@ -91,5 +95,6 @@ export const {
   setRoomId,
   setPropModel,
   setTargetEntity,
+  setBones,
 } = globalSlice.actions;
 export default globalSlice.reducer;
