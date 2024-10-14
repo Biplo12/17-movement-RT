@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
 import { setInteriorId } from "@/state/globalsSlice";
 import { generateRandomInteriorId } from "@/lib/utils";
 
-const CardFunctionInteriorId: React.FC = (): JSX.Element => {
+const InteriorDebuggerInteriorId: React.FC = (): JSX.Element => {
   const interiorId = useAppSelector((state) => state.global.interiorId);
   const dispatch = useAppDispatch();
 
@@ -24,4 +24,4 @@ const CardFunctionInteriorId: React.FC = (): JSX.Element => {
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionInteriorId;
+export default InteriorDebuggerInteriorId;

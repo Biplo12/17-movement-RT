@@ -2,7 +2,7 @@ import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import CopyButton from "@/components/common/copy-button";
 import React from "react";
 
-interface CardFunctionRotationProps {
+interface PedSpawnerRotationProps {
   rotation: {
     X: number | null;
     Y: number | null;
@@ -10,7 +10,7 @@ interface CardFunctionRotationProps {
   };
 }
 
-const CardFunctionRotation: React.FC<CardFunctionRotationProps> = ({
+const PedSpawnerRotation: React.FC<PedSpawnerRotationProps> = ({
   rotation,
 }): JSX.Element => {
   return (
@@ -31,4 +31,4 @@ const CardFunctionRotation: React.FC<CardFunctionRotationProps> = ({
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionRotation;
+export default PedSpawnerRotation;

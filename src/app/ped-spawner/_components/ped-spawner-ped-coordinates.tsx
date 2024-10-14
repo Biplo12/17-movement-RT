@@ -2,11 +2,11 @@ import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import CopyButton from "@/components/common/copy-button";
 import React from "react";
 
-interface CardFunctionPedCoordinatesProps {
+interface PedSpawnerPedCoordinatesProps {
   coordinates: string;
 }
 
-const CardFunctionPedCoordinates: React.FC<CardFunctionPedCoordinatesProps> = ({
+const PedSpawnerPedCoordinates: React.FC<PedSpawnerPedCoordinatesProps> = ({
   coordinates,
 }): JSX.Element => {
   return (
@@ -18,4 +18,4 @@ const CardFunctionPedCoordinates: React.FC<CardFunctionPedCoordinatesProps> = ({
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionPedCoordinates;
+export default PedSpawnerPedCoordinates;

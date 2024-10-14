@@ -1,11 +1,11 @@
 import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import React from "react";
 
-interface CardFunctionModelIdProps {
+interface PedSpawnerModelIdProps {
   modelId: string;
 }
 
-const CardFunctionModelId: React.FC<CardFunctionModelIdProps> = ({
+const PedSpawnerModelId: React.FC<PedSpawnerModelIdProps> = ({
   modelId,
 }): JSX.Element => {
   return (
@@ -16,4 +16,4 @@ const CardFunctionModelId: React.FC<CardFunctionModelIdProps> = ({
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionModelId;
+export default PedSpawnerModelId;

@@ -5,8 +5,8 @@ import CardFunctionHeader from "@/components/card-function-header";
 import PanelCard from "@/components/panel-card";
 import { useAppSelector } from "@/store/store-hooks";
 import { useRouter } from "next/navigation";
-import CardFunctionAddingModel from "./_components/card-function-adding-model";
-import CardFunctionObjectsList from "./_components/card-fucntion-objects-list";
+import PresetAddingModel from "./_components/preset-adding-model";
+import PresetObjectsList from "./_components/preset-objects-list";
 import PrimaryButton from "@/components/common/primary-button";
 import { toast } from "sonner";
 
@@ -38,9 +38,9 @@ export default function WorldEditor({ params }: WorldEditorProps) {
       <div className="flex flex-col items-start justify-between w-full h-[calc(100%-140px)]">
         <div className="flex flex-col items-start justify-start w-full">
           <CardFunctionHeader title={`Editing ${preset.title}`} />
-          <CardFunctionAddingModel presetId={presetId} />
+          <PresetAddingModel presetId={presetId} />
           <div className="h-px w-full bg-[#131418]" />
-          <CardFunctionObjectsList preset={preset} />
+          <PresetObjectsList preset={preset} />
         </div>
         <div className="w-full flex items-start justify-end">
           <PrimaryButton onClick={handleSave}>

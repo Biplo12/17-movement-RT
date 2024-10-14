@@ -2,9 +2,9 @@
 
 import CardFunctionHeader from "@/components/card-function-header";
 import PanelCard from "@/components/panel-card";
-import CardFunctionInteriorId from "./_components/card-function-interior-id";
-import CardFunctionRoomId from "./_components/card-function-room-id";
-import CardFunctionPortalsDebugging from "./_components/card-function-portals-debugging";
+import InteriorDebuggerInteriorId from "./_components/interior-debugger-interior-id";
+import InteriorDebuggerRoomId from "./_components/interior-debugger-room-id";
+import InteriorDebuggerPortalsDebugging from "./_components/interior-debugger-portals-debugging";
 
 export default function InteriorDebugger() {
   return (
@@ -19,9 +19,9 @@ export default function InteriorDebugger() {
             <h1 className="text-white font-bold px-8 py-4">
               Interior information
             </h1>
-            <CardFunctionInteriorId />
-            <CardFunctionRoomId />
-            <CardFunctionPortalsDebugging />
+            <InteriorDebuggerInteriorId />
+            <InteriorDebuggerRoomId />
+            <InteriorDebuggerPortalsDebugging />
           </div>
         </div>
       </div>

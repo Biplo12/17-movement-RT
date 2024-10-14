@@ -16,12 +16,12 @@ import { useAppDispatch } from "@/store/store-hooks";
 import { deletePreset } from "@/state/globalsSlice";
 import CardFunctionActionButton from "@/components/common/card-function-action-button";
 
-interface CardFunctionPresetDeleteAlertProps {
+interface WorldEditorPresetDeleteAlertProps {
   item: Preset;
 }
 
-const CardFunctionPresetDeleteAlert: React.FC<
-  CardFunctionPresetDeleteAlertProps
+const WorldEditorPresetDeleteAlert: React.FC<
+  WorldEditorPresetDeleteAlertProps
 > = ({ item }): JSX.Element => {
   const dispatch = useAppDispatch();
 
@@ -55,4 +55,4 @@ const CardFunctionPresetDeleteAlert: React.FC<
     </AlertDialog>
   );
 };
-export default CardFunctionPresetDeleteAlert;
+export default WorldEditorPresetDeleteAlert;

@@ -16,7 +16,7 @@ const bonesOptions = [
   { value: "bone3", label: "Bone 3" },
 ];
 
-const CardFunctionBones: React.FC = (): JSX.Element => {
+const PropToolBones: React.FC = (): JSX.Element => {
   const bones = useAppSelector((state) => state.global.bones);
   const dispatch = useAppDispatch();
 
@@ -45,4 +45,4 @@ const CardFunctionBones: React.FC = (): JSX.Element => {
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionBones;
+export default PropToolBones;

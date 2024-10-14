@@ -4,7 +4,7 @@ import { setPropModel } from "@/state/globalsSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
 import React, { useEffect } from "react";
 
-const CardFunctionPropModel: React.FC = (): JSX.Element => {
+const PropToolPropModel: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const propModel = useAppSelector((state) => state.global.propModel);
 
@@ -21,4 +21,4 @@ const CardFunctionPropModel: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionPropModel;
+export default PropToolPropModel;

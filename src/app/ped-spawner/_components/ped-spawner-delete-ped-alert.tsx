@@ -15,11 +15,11 @@ import {
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
 
-interface CardFunctionDeletePedAlertProps {
+interface PedSpawnerDeletePedAlertProps {
   item: PedItem;
 }
 
-const CardFunctionDeletePedAlert: React.FC<CardFunctionDeletePedAlertProps> = ({
+const PedSpawnerDeletePedAlert: React.FC<PedSpawnerDeletePedAlertProps> = ({
   item,
 }): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -56,4 +56,4 @@ const CardFunctionDeletePedAlert: React.FC<CardFunctionDeletePedAlertProps> = ({
     </AlertDialog>
   );
 };
-export default CardFunctionDeletePedAlert;
+export default PedSpawnerDeletePedAlert;

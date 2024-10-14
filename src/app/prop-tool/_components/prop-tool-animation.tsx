@@ -1,7 +1,7 @@
 import CardFunctionLabeledItem from "@/components/card-function-labeled-item";
 import React from "react";
 
-const CardFunctionAnimation: React.FC = (): JSX.Element => {
+const PropToolAnimation: React.FC = (): JSX.Element => {
   return (
     <CardFunctionLabeledItem label="Animation">
       <div className="flex w-full gap-4 items-center justify-end">
@@ -16,4 +16,4 @@ const CardFunctionAnimation: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionAnimation;
+export default PropToolAnimation;

@@ -1,19 +1,19 @@
 import React from "react";
 import { Preset } from "@/interfaces";
-import CardFunctionObjectItem from "./card-function-object-item";
+import PresetObjectItem from "./preset-object-item";
 
-interface CardFunctionObjectsListProps {
+interface PresetObjectsListProps {
   preset: Preset;
 }
 
-const CardFunctionObjectsList: React.FC<CardFunctionObjectsListProps> = ({
+const PresetObjectsList: React.FC<PresetObjectsListProps> = ({
   preset,
 }): JSX.Element => {
   return (
     <div className="w-full p-4 flex flex-col gap-4">
       <h1 className="text-white font-bold">Objects list</h1>
       {preset.objects.map((object) => (
-        <CardFunctionObjectItem
+        <PresetObjectItem
           key={object.id}
           object={object}
           presetId={preset.id}
@@ -22,4 +22,4 @@ const CardFunctionObjectsList: React.FC<CardFunctionObjectsListProps> = ({
     </div>
   );
 };
-export default CardFunctionObjectsList;
+export default PresetObjectsList;

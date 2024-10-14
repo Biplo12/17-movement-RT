@@ -1,19 +1,20 @@
 import React from "react";
 import CardFunctionActionButton from "@/components/common/card-function-action-button";
 import { ObjectType } from "@/interfaces";
-import CardFunctionObjectDeleteAlert from "./card-function-object-delete-alert";
+import PresetObjectDeleteAlert from "./preset-object-delete-alert";
 import CopyButton from "@/components/common/copy-button";
 import { useAppDispatch } from "@/store/store-hooks";
 import { setObjectVisibility } from "@/state/globalsSlice";
 
-interface CardFunctionObjectItemActionsProps {
+interface PresetObjectItemActionsProps {
   object: ObjectType;
   presetId: string;
 }
 
-const CardFunctionObjectItemActions: React.FC<
-  CardFunctionObjectItemActionsProps
-> = ({ object, presetId }): JSX.Element => {
+const PresetObjectItemActions: React.FC<PresetObjectItemActionsProps> = ({
+  object,
+  presetId,
+}): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const handleToggleVisibility = () => {
@@ -39,8 +40,8 @@ const CardFunctionObjectItemActions: React.FC<
         onClick={handleToggleVisibility}
       />
       <CardFunctionActionButton icon="edit-icon" label="Edit" />
-      <CardFunctionObjectDeleteAlert object={object} presetId={presetId} />
+      <PresetObjectDeleteAlert object={object} presetId={presetId} />
     </div>
   );
 };
-export default CardFunctionObjectItemActions;
+export default PresetObjectItemActions;

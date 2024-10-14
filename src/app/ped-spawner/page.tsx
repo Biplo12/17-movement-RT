@@ -2,7 +2,7 @@
 
 import CardFunctionHeader from "@/components/card-function-header";
 import PanelCard from "@/components/panel-card";
-import CardFunctionPedItems from "./_components/card-function-ped-items";
+import PedSpawnerPedItems from "./_components/ped-spawner-ped-items";
 import CreateNewPedDialog from "./_components/create-new-ped-dialog";
 
 export default function PedSpawner() {
@@ -15,7 +15,7 @@ export default function PedSpawner() {
             icon="ped-spawner-icon-active"
           />
           <div className="flex flex-col items-start justify-start w-full">
-            <CardFunctionPedItems />
+            <PedSpawnerPedItems />
           </div>
         </div>
       </div>

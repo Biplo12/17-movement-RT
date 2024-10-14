@@ -3,17 +3,17 @@
 import { Preset } from "@/interfaces";
 import React from "react";
 import CardFunctionActionButton from "../../../components/common/card-function-action-button";
-import CardFunctionPresetDeleteAlert from "./card-function-preset-delete-alert";
+import WorldEditorPresetDeleteAlert from "./world-editor-preset-delete-alert";
 import { useRouter } from "next/navigation";
 import { useAppDispatch } from "@/store/store-hooks";
 import { setPresetVisibility } from "@/state/globalsSlice";
 import { cn } from "@/lib/utils";
 
-interface CardFunctionPresetItemProps {
+interface WorldEditorPresetItemProps {
   item: Preset;
 }
 
-const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
+const WorldEditorPresetItem: React.FC<WorldEditorPresetItemProps> = ({
   item,
 }): JSX.Element => {
   const router = useRouter();
@@ -55,9 +55,9 @@ const CardFunctionPresetItem: React.FC<CardFunctionPresetItemProps> = ({
           label="Edit"
           onClick={handleEdit}
         />
-        <CardFunctionPresetDeleteAlert item={item} />
+        <WorldEditorPresetDeleteAlert item={item} />
       </div>
     </div>
   );
 };
-export default CardFunctionPresetItem;
+export default WorldEditorPresetItem;

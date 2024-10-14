@@ -2,10 +2,10 @@
 
 import CardFunctionHeader from "@/components/card-function-header";
 import PanelCard from "@/components/panel-card";
-import CardFunctionPropModel from "./_components/card-function-prop-model";
-import CardFunctionTargetEntity from "./_components/card-function-target-entity";
-import CardFunctionAnimation from "./_components/card-function-animation";
-import CardFunctionBones from "./_components/card-function-bones";
+import CardFunctionPropModel from "./_components/prop-tool-prop-model";
+import CardFunctionTargetEntity from "./_components/prop-tool-target-entity";
+import CardFunctionAnimation from "./_components/prop-tool-animation";
+import CardFunctionBones from "./_components/prop-tool-bones";
 import PrimaryButton from "@/components/common/primary-button";
 import { toast } from "sonner";
 

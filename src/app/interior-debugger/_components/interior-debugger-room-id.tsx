@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
 import { setRoomId } from "@/state/globalsSlice";
 import { generateRandomRoomId } from "@/lib/utils";
 
-const CardFunctionRoomId: React.FC = (): JSX.Element => {
+const InteriorDebuggerRoomId: React.FC = (): JSX.Element => {
   const roomId = useAppSelector((state) => state.global.roomId);
   const dispatch = useAppDispatch();
 
@@ -24,4 +24,4 @@ const CardFunctionRoomId: React.FC = (): JSX.Element => {
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionRoomId;
+export default InteriorDebuggerRoomId;

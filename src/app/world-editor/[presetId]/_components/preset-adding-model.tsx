@@ -4,11 +4,12 @@ import { addObjectToPreset } from "@/state/globalsSlice";
 import { useAppDispatch } from "@/store/store-hooks";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
-interface CardFunctionAddingModelProps {
+
+interface PresetAddingModelProps {
   presetId: string;
 }
 
-const CardFunctionAddingModel: React.FC<CardFunctionAddingModelProps> = ({
+const PresetAddingModel: React.FC<PresetAddingModelProps> = ({
   presetId,
 }): JSX.Element => {
   const [objectName, setObjectName] = useState("");
@@ -49,4 +50,4 @@ const CardFunctionAddingModel: React.FC<CardFunctionAddingModelProps> = ({
     </div>
   );
 };
-export default CardFunctionAddingModel;
+export default PresetAddingModel;

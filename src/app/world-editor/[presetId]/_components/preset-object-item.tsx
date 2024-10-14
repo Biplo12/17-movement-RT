@@ -1,14 +1,14 @@
 import React from "react";
 import { ObjectType } from "@/interfaces";
-import CardFunctionObjectItemActions from "./card-function-object-item-actions";
+import PresetObjectItemActions from "./preset-object-item-actions";
 import { cn } from "@/lib/utils";
 
-interface CardFunctionObjectItemProps {
+interface PresetObjectItemProps {
   object: ObjectType;
   presetId: string;
 }
 
-const CardFunctionObjectItem: React.FC<CardFunctionObjectItemProps> = ({
+const PresetObjectItem: React.FC<PresetObjectItemProps> = ({
   object,
   presetId,
 }): JSX.Element => {
@@ -22,8 +22,8 @@ const CardFunctionObjectItem: React.FC<CardFunctionObjectItemProps> = ({
       >
         {object.title}
       </span>
-      <CardFunctionObjectItemActions object={object} presetId={presetId} />
+      <PresetObjectItemActions object={object} presetId={presetId} />
     </div>
   );
 };
-export default CardFunctionObjectItem;
+export default PresetObjectItem;

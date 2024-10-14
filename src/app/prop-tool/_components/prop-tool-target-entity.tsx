@@ -16,7 +16,7 @@ const targetEntityOptions = [
   { value: "object", label: "Object" },
 ];
 
-const CardFunctionTargetEntity: React.FC = (): JSX.Element => {
+const PropToolTargetEntity: React.FC = (): JSX.Element => {
   const targetEntity = useAppSelector((state) => state.global.targetEntity);
   const dispatch = useAppDispatch();
 
@@ -49,4 +49,4 @@ const CardFunctionTargetEntity: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionTargetEntity;
+export default PropToolTargetEntity;
