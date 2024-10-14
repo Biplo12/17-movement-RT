@@ -7,32 +7,13 @@ const initialState: IGlobalReducerInterface = {
   coordinates: "",
   heading: 0,
   weather: null,
-  presets: [
-    {
-      id: "1",
-      title: "Preset 1",
-      objects: [{ id: "1", title: "Object 1", isVisible: true }],
-      isVisible: true,
-    },
-  ],
+  presets: [],
   interiorId: null,
   roomId: null,
   propModel: null,
   targetEntity: null,
   bones: null,
-  pedItems: [
-    {
-      id: "1",
-      title: "Ped 1",
-      modelId: "model1",
-      coordinates: "X: -803.717 Y: 176.49, Z: 72.841",
-      rotation: {
-        X: 30,
-        Y: 30,
-        Z: 30,
-      },
-    },
-  ],
+  pedItems: [],
 };
 
 export const globalSlice = createSlice({

@@ -16,7 +16,7 @@ const PresetObjectItem: React.FC<PresetObjectItemProps> = ({
     <div className="bg-[#0F1014] p-3 text-white border border-[#131418] flex items-center justify-between">
       <span
         className={cn(
-          "text-white text-lg font-medium",
+          "text-white text-sm font-medium",
           !object.isVisible ? "text-gray-500" : "text-white"
         )}
       >

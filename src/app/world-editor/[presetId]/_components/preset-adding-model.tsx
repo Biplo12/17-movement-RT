@@ -43,7 +43,8 @@ const PresetAddingModel: React.FC<PresetAddingModelProps> = ({
       />
       <button
         onClick={handleAddObject}
-        className="absolute right-8 top-1/2 -translate-y-1/2"
+        disabled={!objectName}
+        className="absolute right-8 top-1/2 -translate-y-1/2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <img src="/icons/plus-icon.svg" alt="add" />
       </button>

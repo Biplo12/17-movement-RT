@@ -60,8 +60,10 @@ const GlobalWeather: React.FC = (): JSX.Element => {
             />
           </button>
         </div>
-        <div className="max-w-[135px]">
-          <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        <div className="w-full max-w-[135px]">
+          <PrimaryButton onClick={handleApply}>
+            <span className="text-center">Apply</span>
+          </PrimaryButton>
         </div>
       </div>
     </CardFunctionLabeledItem>

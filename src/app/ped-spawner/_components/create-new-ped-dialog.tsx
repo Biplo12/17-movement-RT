@@ -59,24 +59,34 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
     title: "",
     coordinates: "",
     modelId: "",
-    rotation: { X: null, Y: null, Z: null },
+    rotation: { X: 0, Y: 0, Z: 0 }, // Initialize with 0 instead of null
   });
 
   const [dialogOpen, setDialogOpen] = useState(false);
   const dispatch = useAppDispatch();
 
   const handlePedItemChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPedItem({ ...pedItem, [e.target.id]: e.target.value });
+    const { id, value } = e.target;
+    if (id.startsWith("rotation")) {
+      const axis = id.charAt(id.length - 1) as "X" | "Y" | "Z";
+      setPedItem((prev) => ({
+        ...prev,
+        rotation: {
+          ...prev.rotation,
+          [axis]: parseFloat(value) || 0,
+        },
+      }));
+    } else {
+      setPedItem((prev) => ({ ...prev, [id]: value }));
+    }
   };
 
   const handleCreateNewPedItem = () => {
     const newId = uuidv4();
     dispatch(
       addPedItem({
+        ...pedItem,
         id: newId,
-        title: pedItem.title,
-        coordinates: pedItem.coordinates,
-        modelId: pedItem.modelId,
         rotation: {
           X: pedItem.rotation.X,
           Y: pedItem.rotation.Y,
@@ -90,7 +100,7 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
       title: "",
       coordinates: "",
       modelId: "",
-      rotation: { X: null, Y: null, Z: null },
+      rotation: { X: 0, Y: 0, Z: 0 }, // Reset to 0
     });
 
     toast.success("Ped created successfully");
@@ -118,7 +128,13 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
             <Input
               key={input.id}
               id={input.id}
-              value={pedItem[input.id as keyof PedItem] as string}
+              value={
+                input.id.startsWith("rotation")
+                  ? pedItem.rotation?.[
+                      input.id.charAt(input.id.length - 1) as "X" | "Y" | "Z"
+                    ]?.toString() ?? ""
+                  : (pedItem[input.id as keyof PedItem] ?? "").toString()
+              }
               onChange={handlePedItemChange}
               placeholder={input.placeholder}
               type={input.type}

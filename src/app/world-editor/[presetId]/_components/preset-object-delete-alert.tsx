@@ -40,14 +40,18 @@ const CardFunctionObjectDeleteAlert: React.FC<
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. This will permanently delete your
-            preset from the list.
+            object from the objects list.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={(e) => e.stopPropagation()}>
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction onClick={handleDelete} type="button">
+          <AlertDialogAction
+            onClick={handleDelete}
+            type="button"
+            className="rounded-[2px] bg-gradient-to-r from-[#FF1A35] to-[#A01F2E] text-white hover:brightness-125 transition-all duration-300 hover:bg-[#131418]"
+          >
             Delete
           </AlertDialogAction>
         </AlertDialogFooter>

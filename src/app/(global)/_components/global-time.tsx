@@ -49,8 +49,10 @@ const GlobalTime: React.FC = (): JSX.Element => {
             onChange={(value) => handleTimeChange(value ?? 0, "seconds")}
           />
         </div>
-        <div className="max-w-[135px]">
-          <PrimaryButton onClick={handleApply}>Apply</PrimaryButton>
+        <div className="w-full max-w-[135px]">
+          <PrimaryButton onClick={handleApply}>
+            <span className="text-center">Apply</span>
+          </PrimaryButton>
         </div>
       </div>
     </CardFunctionLabeledItem>

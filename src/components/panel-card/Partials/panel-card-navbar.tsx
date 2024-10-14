@@ -64,15 +64,17 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
 
 const PanelCardNavbar: React.FC = (): JSX.Element => {
   const pathname = usePathname();
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav className="flex items-start justify-start gap-4 p-4 bg-[#090A0E] w-full">
       {navbarItems.map((item) => (
-        <NavbarItem
-          key={item.href}
-          {...item}
-          isActive={pathname === item.href}
-        />
+        <NavbarItem key={item.href} {...item} isActive={isActive(item.href)} />
       ))}
     </nav>
   );
