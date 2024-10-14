@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
 import { setHeading } from "@/state/globalsSlice";
 import { generateRandomHeading } from "@/lib/utils";
 
-const CardFunctionHeading: React.FC = (): JSX.Element => {
+const GlobalHeading: React.FC = (): JSX.Element => {
   const heading = useAppSelector((state) => state.global.heading);
   const dispatch = useAppDispatch();
 
@@ -25,4 +25,4 @@ const CardFunctionHeading: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionHeading;
+export default GlobalHeading;

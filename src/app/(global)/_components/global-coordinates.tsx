@@ -5,7 +5,7 @@ import CopyButton from "@/components/common/copy-button";
 import { useAppDispatch, useAppSelector } from "@/store/store-hooks";
 import { setCoordinates } from "@/state/globalsSlice";
 
-const CardFunctionCoordinates: React.FC = (): JSX.Element => {
+const GlobalCoordinates: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const coordinates = useAppSelector((state) => state.global.coordinates);
 
@@ -25,4 +25,4 @@ const CardFunctionCoordinates: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionCoordinates;
+export default GlobalCoordinates;

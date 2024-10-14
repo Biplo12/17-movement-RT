@@ -2,12 +2,12 @@
 
 import PanelCard from "../../components/panel-card";
 import CardFunctionHeader from "@/components/card-function-header";
-import CardFunctionCoordinates from "./_components/card-function-coordinates";
-import CardFunctionHeading from "./_components/card-function-heading";
-import CardFunctionTime from "./_components/card-function-time";
-import CardFunctionWeather from "./_components/card-function-weather";
-import CardFunctionFreezeTime from "./_components/card-function-freeze-time";
-import CardFunctionFreezeWeather from "./_components/card-function-freeze-weather";
+import GlobalCoordinates from "./_components/global-coordinates";
+import GlobalHeading from "./_components/global-heading";
+import GlobalTime from "./_components/global-time";
+import GlobalWeather from "./_components/global-weather";
+import GlobalFreezeTime from "./_components/global-freeze-time";
+import GlobalFreezeWeather from "./_components/global-freeze-weather";
 
 export default function Home() {
   return (
@@ -18,18 +18,18 @@ export default function Home() {
             title="Current coordinates"
             icon="location-icon"
           />
-          <CardFunctionCoordinates />
-          <CardFunctionHeading />
+          <GlobalCoordinates />
+          <GlobalHeading />
         </div>
         <div className="flex flex-col items-start justify-start w-full">
           <CardFunctionHeader
             title="Time and weathers configuration"
             icon="weather-icon"
           />
-          <CardFunctionTime />
-          <CardFunctionWeather />
-          <CardFunctionFreezeTime />
-          <CardFunctionFreezeWeather />
+          <GlobalTime />
+          <GlobalWeather />
+          <GlobalFreezeTime />
+          <GlobalFreezeWeather />
         </div>
       </div>
     </PanelCard>

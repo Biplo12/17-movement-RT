@@ -5,7 +5,7 @@ import { generateRandomTime } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const CardFunctionTime: React.FC = (): JSX.Element => {
+const GlobalTime: React.FC = (): JSX.Element => {
   const [time, setTime] = useState({
     hours: 0,
     minutes: 0,
@@ -56,4 +56,4 @@ const CardFunctionTime: React.FC = (): JSX.Element => {
     </CardFunctionLabeledItem>
   );
 };
-export default CardFunctionTime;
+export default GlobalTime;

@@ -6,7 +6,7 @@ import { generateRandomWeather } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const CardFunctionWeather: React.FC = (): JSX.Element => {
+const GlobalWeather: React.FC = (): JSX.Element => {
   const [weather, setWeather] = useState<string | null>("Loading...");
 
   const handleApply = () => {
@@ -68,4 +68,4 @@ const CardFunctionWeather: React.FC = (): JSX.Element => {
   );
 };
 
-export default CardFunctionWeather;
+export default GlobalWeather;
