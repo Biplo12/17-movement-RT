@@ -1,7 +1,7 @@
 "use client";
 
 import PanelCard from "../../components/panel-card";
-import CardFunctionHeader from "@/components/card-function-header";
+import CardFunctionWithHeader from "@/components/card-function-header";
 import GlobalCoordinates from "./_components/global-coordinates";
 import GlobalHeading from "./_components/global-heading";
 import GlobalTime from "./_components/global-time";
@@ -14,22 +14,24 @@ export default function Home() {
     <PanelCard>
       <div className="flex flex-col items-start justify-start w-full">
         <div className="flex flex-col items-start justify-start w-full">
-          <CardFunctionHeader
+          <CardFunctionWithHeader
             title="Current coordinates"
             icon="location-icon"
-          />
-          <GlobalCoordinates />
-          <GlobalHeading />
+          >
+            <GlobalCoordinates />
+            <GlobalHeading />
+          </CardFunctionWithHeader>
         </div>
         <div className="flex flex-col items-start justify-start w-full">
-          <CardFunctionHeader
+          <CardFunctionWithHeader
             title="Time and weathers configuration"
             icon="weather-icon"
-          />
-          <GlobalTime />
-          <GlobalWeather />
-          <GlobalFreezeTime />
-          <GlobalFreezeWeather />
+          >
+            <GlobalTime />
+            <GlobalWeather />
+            <GlobalFreezeTime />
+            <GlobalFreezeWeather />
+          </CardFunctionWithHeader>
         </div>
       </div>
     </PanelCard>

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import CardFunctionHeader from "@/components/card-function-header";
+import CardFunctionWithHeader from "@/components/card-function-header";
 import PanelCard from "@/components/panel-card";
 import { useAppSelector } from "@/store/store-hooks";
 import { useRouter } from "next/navigation";
@@ -37,10 +37,11 @@ export default function WorldEditor({ params }: WorldEditorProps) {
     <PanelCard>
       <div className="flex flex-col items-start justify-between w-full h-[calc(100%-140px)]">
         <div className="flex flex-col items-start justify-start w-full">
-          <CardFunctionHeader title={`Editing ${preset.title}`} />
-          <PresetAddingModel presetId={presetId} />
-          <div className="h-px w-full bg-[#131418]" />
-          <PresetObjectsList preset={preset} />
+          <CardFunctionWithHeader title={`Editing ${preset.title}`}>
+            <PresetAddingModel presetId={presetId} />
+            <div className="h-px w-full bg-[#131418]" />
+            <PresetObjectsList preset={preset} />
+          </CardFunctionWithHeader>
         </div>
         <div className="w-full flex items-start justify-end">
           <PrimaryButton onClick={handleSave}>
