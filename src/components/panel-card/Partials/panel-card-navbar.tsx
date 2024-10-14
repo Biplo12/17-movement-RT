@@ -53,7 +53,11 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
       isActive && "bg-[#121317]"
     )}
   >
-    <img src={`/icons/${icon}.svg`} alt={icon} className="w-5 h-5" />
+    <img
+      src={`/icons/${isActive ? `${icon}-active` : icon}.svg`}
+      alt={icon}
+      className="w-5 h-5"
+    />
     <span className="sr-only">{label}</span>
   </Link>
 );
