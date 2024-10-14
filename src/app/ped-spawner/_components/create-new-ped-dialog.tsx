@@ -59,7 +59,7 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
     title: "",
     coordinates: "",
     modelId: "",
-    rotation: { X: 0, Y: 0, Z: 0 }, // Initialize with 0 instead of null
+    rotation: { X: 0, Y: 0, Z: 0 },
   });
 
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -100,16 +100,24 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
       title: "",
       coordinates: "",
       modelId: "",
-      rotation: { X: 0, Y: 0, Z: 0 }, // Reset to 0
+      rotation: { X: 0, Y: 0, Z: 0 },
     });
 
     toast.success("Ped created successfully");
     setDialogOpen(false);
   };
 
-  const disableCreateButton = pedInputs.some(
-    (input) => !pedItem[input.id as keyof PedItem] as unknown as string
-  );
+  const disableCreateButton = () => {
+    const hasEmptyFields = pedInputs.some((input) => {
+      if (input.id.startsWith("rotation")) {
+        const axis = input.id.charAt(input.id.length - 1) as "X" | "Y" | "Z";
+        return pedItem.rotation[axis] === 0;
+      }
+      return !pedItem[input.id as keyof PedItem];
+    });
+
+    return hasEmptyFields;
+  };
 
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
@@ -133,7 +141,7 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
                   ? pedItem.rotation?.[
                       input.id.charAt(input.id.length - 1) as "X" | "Y" | "Z"
                     ]?.toString() ?? ""
-                  : (pedItem[input.id as keyof PedItem] ?? "").toString()
+                  : pedItem[input.id as keyof PedItem].toString()
               }
               onChange={handlePedItemChange}
               placeholder={input.placeholder}
@@ -142,7 +150,7 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
           ))}
           <PrimaryButton
             onClick={handleCreateNewPedItem}
-            disabled={disableCreateButton}
+            disabled={disableCreateButton()}
           >
             <img src="/icons/plus-icon.svg" alt="Plus icon" />
             <span className="text-center w-full">Create new ped</span>
@@ -152,4 +160,5 @@ const CreateNewPedDialog: React.FC = (): JSX.Element => {
     </Dialog>
   );
 };
+
 export default CreateNewPedDialog;
